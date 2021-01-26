@@ -18,7 +18,7 @@
 	colors="true">
 
 	<testsuites>
-		<testsuite name="Scion">
+		<testsuite name="Logs">
 			<directory>./tests/</directory>
 		</testsuite>
 	</testsuites>
@@ -38,3 +38,5 @@
 			target=".build/coverage"/>
 	</logging>
 </phpunit>
+
+

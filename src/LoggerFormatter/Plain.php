@@ -1,9 +1,9 @@
 <?php
-namespace Pluf\LoggerFormatter;
+namespace Pluf\Log\LoggerFormatter;
 
-use Pluf\LoggerManager;
+use Pluf\Log\LoggerManager;
 
-class Plain implements \Pluf\LoggerFormatter
+class Plain implements \Pluf\Log\LoggerFormatter
 {
 
     public function format(LoggerManager $loggerManager, string $level, string $message, array $context = []): string

@@ -16,10 +16,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Pluf;
+namespace Pluf\Log;
 
 use Psr\Log\LoggerInterface;
-use Pluf;
+use Pluf\Log\LoggerFormatter\Plain;
+use Pluf\Log\LoggerAppender\Console;
 
 /**
  * Internal Pluf Logger
@@ -170,15 +171,8 @@ class Logger
         if (array_key_exists($key, self::$loggerManagers)) {
             return self::$loggerManagers[$key];
         }
-        if (! isset(self::$loggerFormater)) {
-            $className = Pluf::f('log_formater', '\Pluf\LoggerFormater\Plain');
-            self::$loggerFormater = new $className();
-        }
-        if (! isset(self::$loggerAppender)) {
-            $className = Pluf::f('log_appender', '\Pluf\LoggerAppender\Console');
-            self::$loggerAppender = new $className();
-        }
-        $loggerManager = new LoggerManager($key, self::$loggerFormater, self::$loggerAppender);
+        // XXX: maso, 2021: read configuration file
+        $loggerManager = new LoggerManager($key, new Plain(), new Console());
         self::$loggerManagers[$key] = $loggerManager;
         return $loggerManager;
     }

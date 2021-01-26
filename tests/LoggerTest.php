@@ -1,11 +1,8 @@
 <?php
-namespace Pluf\Test\Logger;
-
-require_once 'Pluf.php';
+namespace Pluf\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Pluf\Logger;
-use Pluf;
+use Pluf\Log\Logger;
 
 class LoggerTest extends TestCase
 {
@@ -16,8 +13,6 @@ class LoggerTest extends TestCase
      */
     public function callBasicFunctions()
     {
-        Pluf::start(__DIR__ . '/../conf/config.php');
-
         Logger::debug('hi');
         Logger::error('error');
         Logger::event('event');

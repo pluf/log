@@ -16,12 +16,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Pluf\LoggerAppender;
+namespace Pluf\Log\LoggerAppender;
 
 use Pluf;
 
 /**
- * ذخیره کردن لاگ‌ها در فایل
+ * Store logs into file
  *
  * This is the simplest logger. You can use it as a base to create
  * more complex loggers. The logger interface is really simple and use
@@ -34,12 +34,17 @@ use Pluf;
  * the log file 'pluf_log_file'. By default it creates a
  * <code>pluf.log</code> in the configured tmp folder.
  */
-class File implements \Pluf\LoggerAppender
+class File implements \Pluf\Log\LoggerAppender
 {
 
+    /**
+     *
+     * {@inheritdoc}
+     * @see \Pluf\Log\LoggerAppender::write()
+     */
     public function write($message): void
     {
-        $file = Pluf::f('pluf_log_file', Pluf::f('tmp_folder', '/tmp') . '/pluf.log');
+        $file = '/tmp/pluf.log';
         file_put_contents($file, $message . PHP_EOL, FILE_APPEND);
     }
 }

@@ -34,6 +34,8 @@ class LoggerManager extends AbstractLogger
      */
     private int $levelMark = Logger::OFF;
 
+    private bool $logDelay = false;
+
     /**
      * Buffers all messages
      *
@@ -54,7 +56,7 @@ class LoggerManager extends AbstractLogger
         $this->loggerFormater = $loggerFormater;
         $this->loggerAppender = $loggerAppender;
 
-        $this->levelMark = Logger::toLevelMarker(Pluf::f('log_level', 'off'));
+        $this->levelMark = Logger::WARN;
     }
 
     /**
@@ -84,12 +86,13 @@ class LoggerManager extends AbstractLogger
         $strMessage = $this->loggerFormater->format($this, $level, $message, $context);
 
         // check if should write now
-        if (! Pluf::f('log_delayed', false)) {
-            $this->loggerAppender->write($strMessage);
+        if ($this->logDelay) {
+            // push message to buffer
+            $this->stack[] = $strMessage;
+            return $this;
         }
-
-        // push message to buffer
-        $this->stack[] = $strMessage;
+        $this->loggerAppender->write($strMessage);
+        return $this;
     }
 
     /**

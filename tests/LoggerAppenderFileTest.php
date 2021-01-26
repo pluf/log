@@ -1,11 +1,8 @@
 <?php
-namespace Pluf\Test\Logger;
-
-require_once 'Pluf.php';
+namespace Pluf\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Pluf\LoggerAppender;
-use Pluf;
+use Pluf\Log\LoggerAppender;
 
 class LoggerAppenderFileTest extends TestCase
 {
@@ -16,8 +13,6 @@ class LoggerAppenderFileTest extends TestCase
      */
     public function createInstance()
     {
-        \Pluf::start(__DIR__ . '/../conf/config.php');
-
         $loggerHandler = new LoggerAppender\File();
         $message = 'hi';
         $loggerHandler->write($message);

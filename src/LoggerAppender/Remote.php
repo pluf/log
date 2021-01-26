@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Pluf\LoggerAppender;
+namespace Pluf\Log\LoggerAppender;
 
 use Pluf;
 
@@ -34,7 +34,7 @@ use Pluf;
  * - 'log_remote_port' (8000)
  * - 'log_remote_headers' (array())
  */
-class Remote implements \Pluf\LoggerAppender
+class Remote implements \Pluf\Log\LoggerAppender
 {
 
     /**
