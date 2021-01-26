@@ -1,0 +1,40 @@
+{
+	"name" : "pluf/log",
+	"description" : "Logger",
+	"type" : "library",
+	"homepage" : "https://pluf.ir",
+	"license" : "GPL-3.0+",
+	"authors" : [{
+			"name" : "Mostafa Barmshory",
+			"email" : "mostafa.barmshory@gmail.com"
+		}
+	],
+	"support" : {
+		"email" : "info@pluf.ir",
+		"issues" : "https://github.com/pluf/log/issues",
+		"forum" : "https://github.com/pluf/log",
+		"wiki" : "https://github.com/pluf/log",
+		"source" : "https://github.com/pluf/log"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Pluf\\Log\\" : "src"
+		}
+	},
+	"autoload-dev" : {
+		"psr-4" : {
+			"Pluf\\Tests\\" : "tests"
+		}
+	},
+	"keywords" : [
+		"pluf",
+		"log",
+		"psr"
+	],
+	"require" : {
+		"psr/log" : "1.1.x"
+	},
+	"require-dev" : {
+		"phpunit/phpunit" : "^9"
+	}
+}
