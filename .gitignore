@@ -2,3 +2,5 @@
 /.buildpath
 /vendor/
 /composer.lock
+/.build/
+/.phpunit.result.cache

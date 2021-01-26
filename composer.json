@@ -3,7 +3,7 @@
 	"description" : "Logger",
 	"type" : "library",
 	"homepage" : "https://pluf.ir",
-	"license" : "AGPL-3.0",
+	"license" : "GPL-3.0+",
 	"authors" : [{
 			"name" : "Mostafa Barmshory",
 			"email" : "mostafa.barmshory@gmail.com"
@@ -11,7 +11,7 @@
 	],
 	"support" : {
 		"email" : "info@pluf.ir",
-		"issues" : "https://github.com/pluf/log",
+		"issues" : "https://github.com/pluf/log/issues",
 		"forum" : "https://github.com/pluf/log",
 		"wiki" : "https://github.com/pluf/log",
 		"source" : "https://github.com/pluf/log"
